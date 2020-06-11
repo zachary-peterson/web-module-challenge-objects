@@ -58,12 +58,12 @@ console.log(reviews[5].feedback);
 
 /* Task 5: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
-reviews.push({name: "Zachary", rating: 2.5, feedback: "I'm having some difficulty understanding this."});
+reviews.push({name: "Zachary", rating: 2.5, feedback: "Blah blah blah blah."});
 console.log(reviews);
 
 /* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 
-reviews[7].feedback = "Is this going to work?";
+reviews[7].feedback = "Awesome atmosphere and great selection.";
 console.log(reviews);
 
 /*  Task 7: Write a function to return a review based on the index of the review in the array.
@@ -113,10 +113,17 @@ console.log(getLastReview(reviews));
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(objArrTwo, rated) {
+    const theseReviews = [];
+    for(i = 0; i < objArrTwo.length; i++){
+    if(objArrTwo[i].rating === rated || objArrTwo[i].rating > rated && objArrTwo[i].rating < rated+1){
+      theseReviews.push(objArrTwo[i]);
+      }
+    }
+    console.log(theseReviews);
   }
 
+  getReviewByRating(reviews, 4)
   
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
   
@@ -131,10 +138,17 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
+  function getLongReviews(objArrThree) {
+    const longReviews = [];
+    for(i = 0; i < objArrThree.length; i++){
+      if(objArrThree[i].feedback){
+        longReviews.push(objArrThree[i]);
+      }
+    }
+    return longReviews;
   }
   
+  console.log(getLongReviews(reviews));
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
@@ -154,7 +168,17 @@ The returned object should have the following characteristics:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(odoNum) {
+    const newCar = {
+      odometer: odoNum,
+      drive: function(distance){
+        this.odometer = (odoNum + distance);
+      }
+    }
+    newCar.drive(300);
+    return newCar;
+
 }
+
+console.log(carMaker(18000));
+
