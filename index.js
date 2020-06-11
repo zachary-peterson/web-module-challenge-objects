@@ -27,18 +27,18 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
-// burger.discount = function(customer){
-//   if(burger.discount(customer) === burger.discount("Teacher")){
-//     return burger.price = burger.price - (burger.price * .25);
-//   }else if(burger.discount(customer) === burger.discount("Student")){
-//     return burger.price = burger.price - (burger.price * .25);
-//   }else if(burger.discount(customer) === burger.discount("Public")){
-//     return burger.price = burger.price - (burger.price * .10);
-//   }else{
-//     return burger.price = burger.price - (burger.price * .10);
-//   }
-// }
-// console.log(burger.discount("Student"));
+burger.discount = function(customer){
+  if(customer === "Teacher"){
+    return burger.price = burger.price - (burger.price * .25);
+  }else if(customer === "Student"){
+    return burger.price = burger.price - (burger.price * .25);
+  }else if(customer === "Public"){
+    return burger.price = burger.price - (burger.price * .10);
+  }else{
+    return burger.price = burger.price - (burger.price * .10);
+  }
+}
+console.log(burger.discount("Public"));
 
 ///////////////Reviews (MVP)///////////////////
 
