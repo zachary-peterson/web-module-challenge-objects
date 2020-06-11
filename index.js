@@ -180,4 +180,4 @@ function carMaker(odoNum) {
 
 }
 
-console.log(carMaker(18000);
+console.log(carMaker(18000));
