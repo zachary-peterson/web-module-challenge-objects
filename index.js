@@ -175,10 +175,10 @@ function carMaker(odoNum) {
         this.odometer = (odoNum + distance);
       }
     }
-    newCar.drive(300);
+    newCar.drive(distance);
     return newCar;
 
 }
 
-console.log(carMaker(18000));
+console.log(carMaker(18000);
 
